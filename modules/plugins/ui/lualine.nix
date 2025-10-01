@@ -1,11 +1,15 @@
 { config, lib, ... }:
 let
-  colors = if lib.hasAttrByPath ["lib" "stylix" "colors"] config then config.lib.stylix.colors else {
-    base04 = "#808080";
-    base08 = "#ff0000";
-    base05 = "#c0c0c0";
-    base0B = "#00ff00";
-  };
+  colors =
+    if lib.hasAttrByPath [ "lib" "stylix" "colors" ] config then
+      config.lib.stylix.colors
+    else
+      {
+        base04 = "#808080";
+        base08 = "#ff0000";
+        base05 = "#c0c0c0";
+        base0B = "#00ff00";
+      };
 in
 {
   plugins.lualine = {

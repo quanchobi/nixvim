@@ -63,4 +63,3 @@
     conceallevel = 2;
   };
 }
-

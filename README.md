@@ -50,8 +50,8 @@ To your `flake.nix`, add this repo as an input, and import it as a module
         nixvim.url = "github:quanchobi/nixvim";
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     };
-    outputs = { 
-        self, 
+    outputs = {
+        self,
         nixpkgs,
         ... }@inputs:
         {

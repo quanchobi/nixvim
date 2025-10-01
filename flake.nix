@@ -7,6 +7,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix.url = "github:numtide/treefmt-nix"; # for gh actions
   };
 
   outputs =
@@ -14,11 +15,14 @@
       self,
       nixpkgs,
       nixvim,
+      treefmt-nix,
       ...
     }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+
+      treefmtEval = treefmt-nix.lib.evalModule pkgs (import ./fmt/treefmt.nix);
     in
     {
       # Standalone nixvim package
@@ -64,6 +68,12 @@
             fd
           ];
         };
+      };
+
+      formatter.${system} = treefmtEval.config.build.wrapper;
+
+      checks.${system} = {
+        formatting = treefmtEval.config.build.check self;
       };
     };
 }

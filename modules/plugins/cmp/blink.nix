@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   extraPlugins = with pkgs.vimPlugins; [
 
