@@ -1,10 +1,8 @@
 # Nixvim Config
----
 
 My Neovim config using nixvim.
 
 ## Using as Standalone
----
 
 ### Run without Installing
 
@@ -39,7 +37,6 @@ Add to system or home packages.
 ```
 
 ## Using as a Module
----
 
 This assumes you are using a flake. If you are not, you should. They are quite nice. Modules for both NixOS and Home Manager are exposed.
 
@@ -95,12 +92,11 @@ To your `flake.nix`, add this repo as an input:
 ```
 
 ## Plugins
----
 
 _todo..._
 
 ## Credits
----
 
 [nixvim](https://github.com/nix-community/nixvim)
+
 [Elythh](https://github.com/elythh/nixvim) for their flake structure and the general idea
