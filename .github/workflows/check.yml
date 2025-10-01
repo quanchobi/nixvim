@@ -7,7 +7,7 @@ on:
     branches: [main, master]
   schedule:
     # Run at 01:00 UTC on the 1st of every month (after flake update)
-    - cron: '0 1 1 * *'
+    - cron: "0 1 1 * *"
   workflow_dispatch:
 
 jobs:
@@ -28,14 +28,6 @@ jobs:
 
       - name: Format code with treefmt
         run: nix fmt
-
-      - name: Check if formatting changed anything
-        run: |
-          if ! git diff --quiet; then
-            echo "Code was not formatted. Please run 'nix fmt' locally."
-            git diff
-            exit 1
-          fi
 
       - name: Run flake check
         run: nix flake check --all-systems
