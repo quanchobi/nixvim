@@ -1,6 +1,6 @@
 {
   imports = [
-    ./dap.nix
+    #./dap.nix
     ./obsidian.nix
 
     ./cmp

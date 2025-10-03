@@ -5,7 +5,10 @@
       enable = true;
       settings = {
         indent.enable = false; # Seems to be broken unless I'm dumb? Never indents correctly.
-        highlight.enable = true;
+        highlight = {
+          enable = true;
+          additional_vim_regex_highlighting = false;
+        };
       };
       folding = false;
       nixvimInjections = true;

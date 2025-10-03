@@ -4,6 +4,11 @@
     cmp-dap.enable = true;
     dap-virtual-text.enable = true;
 
+    dap-python = {
+      enable = true;
+      pythonPath = "${pkgs.python3}/bin/python";
+    };
+
     dap-ui = {
       enable = true;
       settings.floating.mappings = {
@@ -37,7 +42,65 @@
   };
 
   keymaps = [
-    # TODO
+    {
+      key = "<F5>";
+      action = "require('dap').continue";
+      options.desc = "DAP: Continue";
+    }
+    {
+      key = "<F6>";
+      action = "require('dap').terminate";
+      options.desc = "DAP: Terminate";
+    }
+    {
+      key = "<F7>";
+      action = "require('dap').step_over";
+      options.desc = "DAP: Step Over";
+    }
+    {
+      key = "<F8>";
+      action = "require('dap').step_into";
+      options.desc = "DAP: Step Into";
+    }
+    {
+      key = "<F9>";
+      action = "require('dap').step_out";
+      options.desc = "DAP: Step Out";
+    }
+    {
+      mode = "n";
+      key = "<leader>b";
+      action = "require('dap').toggle_breakpoint";
+      options.desc = "DAP: Toggle Breakpoint";
+    }
+    {
+      mode = "n";
+      key = "<leader>B";
+      action = ''
+        function()
+          require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
+        end
+      '';
+      options.desc = "DAP: Set Conditional Breakpoint";
+    }
+    {
+      mode = "n";
+      key = "<leader>dl";
+      action = "require('telescope').extensions.dap.list_breakpoints";
+      options.desc = "DAP: List Breakpoints";
+    }
+    {
+      mode = "n";
+      key = "<leader>dv";
+      action = "require('telescope').extensions.dap.variables";
+      options.desc = "DAP: Variables";
+    }
+    {
+      mode = "n";
+      key = "<leader>dc";
+      action = "require('telescope').extensions.dap.commands";
+      options.desc = "DAP: Commands";
+    }
   ];
 
   # Allow DAP UI to automatically open and close when possible
@@ -49,3 +112,4 @@
 
   extraPlugins = [ pkgs.vimPlugins.telescope-dap-nvim ];
 }
+

@@ -107,7 +107,7 @@ To your `flake.nix`, add this repo as an input:
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Provides fast and accurate syntax highlighting. |
 | [undotree](https://github.com/mbbill/undotree) | Visualizes undo history. |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git integration for neovim. |
-| [conform.nvim](httpss://github.com/stevearc/conform.nvim) | A plugin for formatting code. |
+| [conform.nvim](https://github.com/stevearc/conform.nvim) | A plugin for formatting code. |
 | [nvim-lint](https://github.com/mfussenegger/nvim-lint) | A linter plugin. |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Language Server Protocol integration. |
 | [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) | An enhancement for the built-in LSP. |
@@ -123,7 +123,6 @@ To your `flake.nix`, add this repo as an input:
 | [nvim-dap](https://github.com/mfussenegger/nvim-dap) | Debug Adapter Protocol implementation for debugging. |
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) | UI for nvim-dap. |
 | [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) | For working with obsidian vaults. |
-| [ollama.nvim](https://github.com/nomnivore/ollama.nvim) | Ollama integration for code generation. |
 
 </details>
 

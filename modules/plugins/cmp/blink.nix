@@ -1,7 +1,10 @@
 { pkgs, ... }:
 {
   extraPlugins = with pkgs.vimPlugins; [
-
+    friendly-snippets
+    luasnip
+    cmp-nvim-lsp
+    blink-compat
   ];
 
   plugins = {
@@ -10,14 +13,25 @@
     cmp-git.enable = true;
     cmp-spell.enable = true;
     cmp-treesitter.enable = true;
+    blink-ripgrep.enable = true;
 
-    # blink-compat = {
-    #   enable = true;
-    #   settings = {
-    #     debug = false;
-    #     impersonate_nvim_cmp = true;
-    #   };
-    # };
+    blink-compat = {
+      enable = true;
+      settings = {
+        debug = false;
+        impersonate_nvim_cmp = true;
+      };
+    };
+
+    luasnip = {
+      enable = true;
+      settings.enable_autosnippets = true;
+      fromVscode = [
+        {
+          paths = "${pkgs.vimPlugins.friendly-snippets}";
+        }
+      ];
+    };
 
     lsp.capabilities = # Lua
       ''
@@ -26,14 +40,10 @@
 
     blink-cmp = {
       enable = true;
-      luaConfig.pre = # lua
-        ''
-          require('blink.compat').setup({debug = true, impersonate_nvim_cmp = true})
-        '';
 
       settings = {
         keymap = {
-          preset = "super-tab";
+          preset = "cmdline";
         };
 
         signature = {
@@ -51,6 +61,7 @@
             "path"
             "snippets"
             "spell"
+            "treesitter"
           ];
           providers = {
             calc = {
@@ -72,6 +83,10 @@
             };
             spell = {
               name = "spell";
+              module = "blink.compat.source";
+            };
+            treesitter = {
+              name = "treesitter";
               module = "blink.compat.source";
             };
           };
@@ -120,8 +135,10 @@
           };
         };
         completion = {
+          ghost_text.enabled = true;
           menu = {
-            border = "none";
+            border = "rounded";
+            #winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None";
             draw = {
               gap = 1;
               treesitter = [ "lsp" ];
@@ -145,6 +162,7 @@
             auto_show = true;
             window = {
               border = "rounded";
+              #winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None";
             };
           };
           accept = {
