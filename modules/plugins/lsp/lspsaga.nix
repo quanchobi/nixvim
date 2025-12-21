@@ -10,7 +10,7 @@
         code_action = "💡"; # Can be any symbol you want 💡
       };
       hover = {
-        open_cmd = "firefox"; # Choose your browser
+        open_cmd = "zen"; # Choose your browser
         open_link = "gx";
       };
       diagnostic = {
