@@ -1,6 +1,6 @@
 {
   plugins.startup = {
     enable = true;
-    theme = "dashboard";
+    settings.theme = "dashboard";
   };
 }
