@@ -55,8 +55,8 @@
       };
 
       # For use as a home-manager module
-      homeManagerModules.default = {
-        imports = [ nixvim.homeManagerModules.nixvim ];
+      homeModules.default = {
+        imports = [ nixvim.homeModules.nixvim ];
         programs.nixvim = {
           enable = true;
           defaultEditor = true;
