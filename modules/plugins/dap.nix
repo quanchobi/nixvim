@@ -112,4 +112,3 @@
 
   extraPlugins = [ pkgs.vimPlugins.telescope-dap-nvim ];
 }
-

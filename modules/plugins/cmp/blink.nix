@@ -43,7 +43,42 @@
 
       settings = {
         keymap = {
-          preset = "cmdline";
+          preset = "none";
+          "<Tab>" = [
+            "snippet_forward"
+            "select_next"
+            "fallback"
+          ];
+          "<S-Tab>" = [
+            "snippet_backward"
+            "select_prev"
+            "fallback"
+          ];
+          "<CR>" = [
+            "accept"
+            "fallback"
+          ];
+
+          "<C-space>" = [
+            "show"
+            "show_documentation"
+            "hide_documentation"
+            "fallback"
+          ];
+          "<C-s>" = [
+            "show_signature"
+            "hide_signature"
+            "fallback"
+          ];
+
+          "<C-u>" = [
+            "scroll_documentation_up"
+            "fallback"
+          ];
+          "<C-d>" = [
+            "scroll_documentation_down"
+            "fallback"
+          ];
         };
 
         signature = {
@@ -63,6 +98,7 @@
             "spell"
             "treesitter"
           ];
+
           providers = {
             calc = {
               name = "calc";
