@@ -18,6 +18,16 @@
     };
   };
 
+  extraConfigLuaPost = ''
+    vim.api.nvim_set_hl(0, 'LineNr', { fg = '#fdc253', bg = NONE } )
+    vim.api.nvim_set_hl(0, 'CursorLine', { bg = NONE } )
+    vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#fdc253', bg = NONE } )
+    vim.api.nvim_set_hl(0, 'CursorLineSign', { bg = NONE } )
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { bg = NONE } )
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { bg = NONE } )
+    vim.api.nvim_set_hl(0, 'SignColumn', { bg = NONE } )
+  '';
+
   opts = {
     mouse = "";
     number = true;

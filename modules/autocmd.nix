@@ -12,7 +12,6 @@
       command = "wincmd H";
     }
 
-
     # File specific commands
     {
       desc = "Set nix filetype indent";
@@ -34,5 +33,6 @@
       pattern = "md";
       command = "lua require'otter'.activate()";
     }
+
   ];
 }
