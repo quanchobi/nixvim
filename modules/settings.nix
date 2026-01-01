@@ -44,5 +44,10 @@
     signcolumn = "yes";
     showmode = false;
     conceallevel = 2;
+
+    tabstop = 4;
+    shiftwidth = 4;
+    softtabstop = 4;
+    expandtab = true;
   };
 }

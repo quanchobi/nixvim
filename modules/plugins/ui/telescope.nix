@@ -48,10 +48,6 @@
         action = "grep_string";
         options.desc = "Grep string";
       };
-      "<leader>fd" = {
-        action = "diagnostics";
-        options.desc = "View diagnostics";
-      };
       "<leader>ff" = {
         action = "find_files";
         options.desc = "Find files";
@@ -103,6 +99,16 @@
     };
   };
   keymaps = [
+    {
+      mode = "n";
+      key = "<leader>fd";
+      action.__raw = ''
+        function()
+          require("telescope.builtin").diagnostics({wrap_results=true, line_width='full'})
+        end
+      '';
+      options.desc = "View diagnostics";
+    }
     {
       mode = "n";
       key = "<leader>fF";
