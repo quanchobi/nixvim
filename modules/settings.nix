@@ -18,29 +18,12 @@
     };
   };
 
-  extraConfigLuaPost = ''
-    vim.api.nvim_set_hl(0, 'LineNr', { fg = '#747C84', bg = NONE } )
-    vim.api.nvim_set_hl(0, 'CursorLine', { bg = NONE } )
-    vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#C7AE95', bg = NONE } )
-    vim.api.nvim_set_hl(0, 'CursorLineSign', { bg = NONE } )
-    vim.api.nvim_set_hl(0, 'LineNrAbove', { bg = NONE } )
-    vim.api.nvim_set_hl(0, 'LineNrBelow', { bg = NONE } )
-    vim.api.nvim_set_hl(0, 'SignColumn', { bg = NONE } )
-  '';
-
   opts = {
     mouse = "";
     number = true;
     relativenumber = true;
     cursorline = true;
     cursorlineopt = "number";
-
-    # Handled by guess-indent
-    autoindent = true;
-    softtabstop = 4;
-    smartindent = true;
-    tabstop = 4;
-    expandtab = true;
 
     wrap = false;
     sidescroll = 2;

@@ -11,12 +11,7 @@
       pattern = "help";
       command = "wincmd H";
     }
-    {
-      desc = "Close telescope prompt in insert mode by clicking escape";
-      event = "FileType";
-      pattern = "TelescopePrompt";
-      command = "inoremap <buffer><silent> <ESC> <ESC>:close!<CR>";
-    }
+
 
     # File specific commands
     {

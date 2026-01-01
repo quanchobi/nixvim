@@ -20,7 +20,7 @@
         tabstop = "detected";
       };
       on_tab_options = {
-        expantab = true;
+        expandtab = true;
       };
       override_editorconfig = true;
     };
