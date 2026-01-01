@@ -17,6 +17,7 @@
         lua
         make
         python
+        go
 
         c
         cpp

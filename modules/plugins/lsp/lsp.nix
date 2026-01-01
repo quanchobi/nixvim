@@ -21,6 +21,7 @@
         };
         ts_ls.enable = true;
         lua_ls.enable = true;
+        gopls.enable = true;
       };
     };
   };

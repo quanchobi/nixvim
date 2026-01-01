@@ -4,14 +4,12 @@
     friendly-snippets
     luasnip
     cmp-nvim-lsp
+    cmp-path
+    cmp-nvim-lsp-signature-help
     blink-compat
   ];
 
   plugins = {
-    cmp-calc.enable = true;
-    cmp-emoji.enable = true;
-    cmp-git.enable = true;
-    cmp-spell.enable = true;
     cmp-treesitter.enable = true;
     blink-ripgrep.enable = true;
 
@@ -87,43 +85,44 @@
 
         sources = {
           default = [
-            "buffer"
-            "calc"
-            "emoji"
-            "ripgrep"
-            "git"
             "lsp"
-            "path"
+            "buffer"
             "snippets"
-            "spell"
             "treesitter"
+            "path"
+            "ripgrep"
           ];
 
           providers = {
-            calc = {
-              name = "calc";
-              module = "blink.compat.source";
+            lsp = {
+              name = "LSP";
+              module = "blink.cmp.sources.lsp";
+              score_offset = 10;
             };
-            emoji = {
-              name = "emoji";
-              module = "blink.compat.source";
-            };
-            git = {
-              name = "git";
-              module = "blink.compat.source";
-            };
-            ripgrep = {
-              name = "Ripgrep";
-              module = "blink-ripgrep";
-              score_offset = 1;
-            };
-            spell = {
-              name = "spell";
-              module = "blink.compat.source";
+            snippets = {
+              name = "Snippets";
+              module = "blink.cmp.sources.snippets";
+              score_offset = 8;
             };
             treesitter = {
               name = "treesitter";
               module = "blink.compat.source";
+              score_offset = 6;
+            };
+            buffer = {
+              name = "Buffer";
+              module = "blink.cmp.sources.buffer";
+              score_offset = 4;
+            };
+            path = {
+              name = "Path";
+              module = "blink.cmp.sources.path";
+              score_offset = 2;
+            };
+            ripgrep = {
+              name = "Ripgrep";
+              module = "blink-ripgrep";
+              score_offset = 0;
             };
           };
         };
@@ -166,8 +165,6 @@
             Warning = "󰏯";
             Information = "󰏮";
             Hint = "󰏭";
-
-            Emoji = "🤶";
           };
         };
         completion = {
