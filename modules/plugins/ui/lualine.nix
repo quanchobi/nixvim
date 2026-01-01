@@ -10,19 +10,19 @@ in
         theme = {
           normal = {
             a = {
-              bg = "nil";
+              bg = colors.base01;
             };
             b = {
-              bg = "nil";
+              bg = colors.base01;
             };
             c = {
-              bg = "nil";
+              bg = colors.base01;
             };
             z = {
-              bg = "nil";
+              bg = colors.base01;
             };
             y = {
-              bg = "nil";
+              bg = colors.base01;
             };
           };
         };
@@ -49,7 +49,7 @@ in
             fmt = "string.lower";
             color = {
               fg = colors.base04;
-              bg = "nil";
+              bg = colors.base01;
             };
             separator.left = "";
             separator.right = "";
@@ -61,7 +61,7 @@ in
             icon.__unkeyed = "";
             color = {
               fg = colors.base04;
-              bg = "nil";
+              bg = colors.base01;
             };
             separator.left = "";
             separator.right = "";
@@ -83,7 +83,7 @@ in
             };
             color = {
               fg = colors.base08;
-              bg = "nil";
+              bg = colors.base01;
             };
             separator.left = "";
             separator.right = "";
@@ -106,7 +106,7 @@ in
             };
             color = {
               fg = colors.base05;
-              bg = "nil";
+              bg = colors.base01;
             };
             separator.left = "";
             separator.right = "";
@@ -117,7 +117,7 @@ in
             __unkeyed = "location";
             color = {
               fg = colors.base0B;
-              bg = "nil";
+              bg = colors.base01;
             };
             separator.left = "";
             separator.right = "";
