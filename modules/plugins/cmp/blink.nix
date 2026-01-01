@@ -168,7 +168,7 @@
           };
         };
         completion = {
-          ghost_text.enabled = true;
+          ghost_text.enabled = false;
           menu = {
             border = "rounded";
             #winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None";
