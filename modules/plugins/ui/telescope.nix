@@ -3,7 +3,10 @@
   ...
 }:
 {
-  extraPackages = with pkgs; [ ripgrep ];
+  extraPackages = with pkgs; [
+    ripgrep
+    fd
+  ];
   plugins.web-devicons.enable = true;
   plugins.telescope = {
     enable = true;
@@ -49,8 +52,8 @@
         options.desc = "Grep string";
       };
       "<leader>ff" = {
-        action = "find_files";
-        options.desc = "Find files";
+        action = "file_browser";
+        options.desc = "File browser";
       };
       "<leader><leader>" = {
         action = "find_files";
@@ -80,22 +83,6 @@
         action = "quickfix";
         options.desc = "Search quickfix";
       };
-      "<leader>gB" = {
-        action = "git_branches";
-        options.desc = "View git branches";
-      };
-      "<leader>gC" = {
-        action = "git_commits";
-        options.desc = "View git commits";
-      };
-      "<leader>gs" = {
-        action = "git_status";
-        options.desc = "View git status";
-      };
-      "<leader>gS" = {
-        action = "git_stash";
-        options.desc = "View git stashes";
-      };
     };
   };
   keymaps = [
@@ -119,21 +106,6 @@
       '';
       options = {
         desc = "Find all files";
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fW";
-      action.__raw = ''
-        function()
-          require("telescope.builtin").live_grep {
-            additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
-          }
-        end
-      '';
-      options = {
-        desc = "Find words in all files";
         silent = true;
       };
     }
