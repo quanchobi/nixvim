@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
   colors = config.colorschemes.base16.colorscheme;
 in
