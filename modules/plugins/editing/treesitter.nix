@@ -58,11 +58,5 @@
         };
       };
     };
-
-    # Otter allows lsp features for code embedded in notebooks
-    otter = {
-      enable = true;
-      settings = { };
-    };
   };
 }
