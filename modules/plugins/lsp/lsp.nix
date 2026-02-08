@@ -23,6 +23,23 @@
         lua_ls.enable = true;
         gopls.enable = true;
       };
+      keymaps = {
+        lspBuf = {
+          K = "hover";
+          gD = "references";
+          gm = "implementation";
+          gy = "type_definition";
+        };
+        extra = [
+          {
+            action = {
+              __raw = "require('telescope.builtin').lsp_definitions";
+            };
+            key = "gd";
+            options.desc = "Go to definition";
+          }
+        ];
+      };
     };
   };
 }
