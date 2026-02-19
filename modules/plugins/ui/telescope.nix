@@ -15,7 +15,7 @@
         enable = true;
         settings.hijack_netrw = true;
       };
-      fzf-native = {
+      fzy-native = {
         enable = true;
       };
       undo = {
@@ -51,6 +51,11 @@
         action = "grep_string";
         options.desc = "Grep string";
       };
+      "<leader>fg" = {
+        action = "live_grep";
+        options.desc = "Live grep";
+      };
+
       "<leader>ff" = {
         action = "file_browser";
         options.desc = "File browser";
