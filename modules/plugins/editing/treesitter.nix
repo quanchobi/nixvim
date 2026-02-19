@@ -10,7 +10,7 @@
           additional_vim_regex_highlighting = false;
         };
       };
-      folding = false;
+      folding.enable = false;
       nixvimInjections = true;
       grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
         bash

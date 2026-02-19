@@ -3,6 +3,7 @@
   extraPackages = with pkgs; [
     shfmt
     stylua
+    nixfmt
   ];
   plugins.conform-nvim = {
     enable = true;
@@ -46,7 +47,7 @@
             "prettier"
           ]
         ];
-        nix = [ "nixfmt-rfc-style" ];
+        nix = [ "nixfmt" ];
         python = [ "black" ];
         typescript = [
           [
@@ -64,9 +65,6 @@
         hcl = [ "hclfmt" ];
       };
       formatters = {
-        "nixfmt-rfc-style" = {
-          command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
-        };
         black = {
           args = [ "--fast" ];
         };
