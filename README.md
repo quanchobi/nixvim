@@ -84,7 +84,7 @@ To your `flake.nix`, add this repo as an input:
   config = {
     home-manager = {
       sharedModules = [
-        inputs.nixvim.homeManagerModules.default
+        inputs.nixvim.homeModules.default
       ]
     };
   };

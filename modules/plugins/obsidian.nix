@@ -5,11 +5,13 @@
     markview = {
       enable = true;
       settings = {
-        preview.hybrid_modes = [
-          "n"
-          "no"
-        ];
-        linewise_hybrid_mode = true;
+        preview = {
+          hybrid_modes = [
+            "n"
+            "no"
+          ];
+          linewise_hybrid_mode = true;
+        };
       };
     };
   };

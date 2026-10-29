@@ -40,8 +40,8 @@ jobs:
 
       - name: Check for evaluation errors
         run: |
-          nix eval .#nixosModules.default --apply 'x: true' 
-          nix eval .#homeManagerModules.default --apply 'x: true'
+          nix eval .#nixosModules.default --apply 'x: true'
+          nix eval .#homeModules.default --apply 'x: true'
 
   deadnix-check:
     runs-on: ubuntu-latest

@@ -74,7 +74,7 @@ in
         ];
         lualine_c = [
           {
-            __unkeyed = "diagnostic";
+            __unkeyed = "diagnostics";
             symbols = {
               error = " ";
               warn = " ";

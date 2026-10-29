@@ -23,14 +23,14 @@
     {
       desc = "Set wrap for markdown files";
       event = [ "FileType" ];
-      pattern = "md";
+      pattern = "markdown";
       command = "setlocal wrap";
     }
 
     {
       desc = "Enable Otter for markdown files";
       event = [ "FileType" ];
-      pattern = "md";
+      pattern = "markdown";
       command = "lua require'otter'.activate()";
     }
 

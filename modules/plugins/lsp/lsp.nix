@@ -2,7 +2,6 @@
   plugins = {
     cmp-nvim-lsp.enable = true;
     fidget.enable = true;
-    lsp-format.enable = true;
     lsp = {
       inlayHints = true;
       enable = true;
@@ -12,7 +11,12 @@
         html.enable = true;
         pyright.enable = true;
         markdown_oxide.enable = true;
-        ltex.enable = true;
+        ltex = {
+          enable = true;
+          # ltex-ls re-checks the whole document with LanguageTool on every didChange, which
+          # pins the JVM at >100% CPU while typing prose. Check on save instead.
+          settings.checkFrequency = "save";
+        };
         #textlsp.enable = true;
         rust_analyzer = {
           enable = true;

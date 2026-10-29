@@ -1,4 +1,11 @@
 { pkgs, ... }:
+let
+  prettier = {
+    __unkeyed-1 = "prettierd";
+    __unkeyed-2 = "prettier";
+    stop_after_first = true;
+  };
+in
 {
   extraPackages = with pkgs; [
     shfmt
@@ -9,67 +16,32 @@
     enable = true;
     settings = {
       format_on_save = {
-        lspFallback = true;
-        timeoutMs = 500;
+        lsp_format = "fallback";
+        timeout_ms = 500;
       };
       notify_on_error = true;
       formatters_by_ft = {
         bash = [ "shfmt" ];
         sh = [ "shfmt" ];
-        css = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
-        html = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
-        javascript = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
-        javascriptreact = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
+        css = prettier;
+        html = prettier;
+        javascript = prettier;
+        javascriptreact = prettier;
         lua = [ "stylua" ];
-        markdown = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
+        markdown = prettier;
         nix = [ "nixfmt" ];
         python = [ "black" ];
-        typescript = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
-        typescriptreact = [
-          [
-            "prettierd"
-            "prettier"
-          ]
-        ];
+        typescript = prettier;
+        typescriptreact = prettier;
         yaml = [ "yamlfmt" ];
         hcl = [ "hclfmt" ];
       };
       formatters = {
         black = {
-          args = [ "--fast" ];
+          prepend_args = [ "--fast" ];
         };
         prettier = {
-          args = [ "--no-semi" ];
+          prepend_args = [ "--no-semi" ];
         };
       };
     };
