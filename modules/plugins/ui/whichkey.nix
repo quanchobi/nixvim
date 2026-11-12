@@ -19,6 +19,10 @@
         group = "Hunks";
       }
       {
+        __unkeyed-1 = "<leader>o";
+        group = "omp";
+      }
+      {
         __unkeyed-1 = "<leader>u";
         group = "Undo";
       }

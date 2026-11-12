@@ -75,10 +75,31 @@
         "type": "github"
       }
     },
+    "omp-nvim": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794461567,
+        "narHash": "sha256-7FEUEBIyfR4cqK6UP+ekfx/VEfGsN4kXWGzpWowQXqI=",
+        "owner": "quanchobi",
+        "repo": "omp.nvim",
+        "rev": "ad09b44fc089e140fdac67da8574007f8885831f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quanchobi",
+        "repo": "omp.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "omp-nvim": "omp-nvim",
         "treefmt-nix": "treefmt-nix"
       }
     },
