@@ -11,11 +11,12 @@
         html.enable = true;
         pyright.enable = true;
         markdown_oxide.enable = true;
-        ltex = {
+        # ltex-ls was archived upstream and removed from nixpkgs; ltex-ls-plus is the maintained fork.
+        ltex_plus = {
           enable = true;
-          # ltex-ls re-checks the whole document with LanguageTool on every didChange, which
+          # ltex re-checks the whole document with LanguageTool on every didChange, which
           # pins the JVM at >100% CPU while typing prose. Check on save instead.
-          settings.checkFrequency = "save";
+          settings.ltex.checkFrequency = "save";
         };
         #textlsp.enable = true;
         rust_analyzer = {
