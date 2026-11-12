@@ -82,11 +82,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794461567,
-        "narHash": "sha256-7FEUEBIyfR4cqK6UP+ekfx/VEfGsN4kXWGzpWowQXqI=",
+        "lastModified": 1794462760,
+        "narHash": "sha256-4Ctuzp1Q7YwPHjBCeyc/aNcDSZkEKYVPgT9TqhMoDyo=",
         "owner": "quanchobi",
         "repo": "omp.nvim",
-        "rev": "ad09b44fc089e140fdac67da8574007f8885831f",
+        "rev": "8c701327f3b9abbae4321ba6b319b2849ee720be",
         "type": "github"
       },
       "original": {
