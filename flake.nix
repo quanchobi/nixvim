@@ -42,6 +42,7 @@
       nixosModules.default = {
         imports = [ nixvim.nixosModules.nixvim ];
         programs.nixvim = {
+          nixpkgs.source = nixpkgs;
           enable = true;
           defaultEditor = true;
           viAlias = true;
@@ -58,6 +59,7 @@
       homeModules.default = {
         imports = [ nixvim.homeModules.nixvim ];
         programs.nixvim = {
+          nixpkgs.source = nixpkgs;
           enable = true;
           defaultEditor = true;
           viAlias = true;
