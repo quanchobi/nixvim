@@ -23,19 +23,18 @@
       pkgs = import nixpkgs { inherit system; };
 
       treefmtEval = treefmt-nix.lib.evalModule pkgs (import ./fmt/treefmt.nix);
+
+      # Shared by every output. `flakeSelf` lets modules reference this flake's source (used by nixd).
+      nixvimModule = {
+        imports = [ ./modules ];
+        _module.args.flakeSelf = self;
+      };
     in
     {
       # Standalone nixvim package
       packages.${system}.default = nixvim.legacyPackages.${system}.makeNixvimWithModule {
         inherit pkgs;
-        module = {
-          imports = [ ./modules ];
-          extraPackages = with pkgs; [
-            tree-sitter
-            nodejs
-            fd
-          ];
-        };
+        module = nixvimModule;
       };
 
       # For use as a NixOS module
@@ -46,12 +45,7 @@
           enable = true;
           defaultEditor = true;
           viAlias = true;
-          imports = [ ./modules ];
-          extraPackages = with pkgs; [
-            tree-sitter
-            nodejs
-            fd
-          ];
+          imports = [ nixvimModule ];
         };
       };
 
@@ -63,12 +57,7 @@
           enable = true;
           defaultEditor = true;
           viAlias = true;
-          imports = [ ./modules ];
-          extraPackages = with pkgs; [
-            tree-sitter
-            nodejs
-            fd
-          ];
+          imports = [ nixvimModule ];
         };
       };
 

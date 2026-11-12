@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  extraPackages = with pkgs; [
+    tree-sitter
+    nodejs
+  ];
+
   performance = {
     byteCompileLua = {
       enable = true;

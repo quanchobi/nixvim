@@ -22,7 +22,7 @@
       on_tab_options = {
         expandtab = true;
       };
-      override_editorconfig = true;
+      override_editorconfig = false; # respect a project's .editorconfig
     };
   };
 }

@@ -6,10 +6,15 @@
       command = "norm zz";
     }
     {
-      desc = "Open help in horizontal split";
+      desc = "Open help in a vertical split on the left";
       event = "FileType";
       pattern = "help";
       command = "wincmd H";
+    }
+    {
+      desc = "Briefly highlight yanked text";
+      event = "TextYankPost";
+      callback.__raw = "function() vim.hl.on_yank() end";
     }
 
     # File specific commands

@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 let
   prettier = {
     __unkeyed-1 = "prettierd";
@@ -7,13 +6,10 @@ let
   };
 in
 {
-  extraPackages = with pkgs; [
-    shfmt
-    stylua
-    nixfmt
-  ];
   plugins.conform-nvim = {
     enable = true;
+    # Installs every formatter referenced in formatters_by_ft from nixpkgs.
+    autoInstall.enable = true;
     settings = {
       format_on_save = {
         lsp_format = "fallback";

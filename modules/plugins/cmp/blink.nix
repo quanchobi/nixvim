@@ -1,15 +1,7 @@
-{ pkgs, ... }:
 {
-  extraPlugins = with pkgs.vimPlugins; [
-    friendly-snippets
-    luasnip
-    cmp-nvim-lsp
-    cmp-path
-    cmp-nvim-lsp-signature-help
-    blink-compat
-  ];
-
   plugins = {
+    # Read by blink's built-in snippet source from runtimepath.
+    friendly-snippets.enable = true;
     cmp-treesitter.enable = true;
     blink-ripgrep.enable = true;
 
@@ -20,21 +12,6 @@
         impersonate_nvim_cmp = true;
       };
     };
-
-    luasnip = {
-      enable = true;
-      settings.enable_autosnippets = true;
-      fromVscode = [
-        {
-          paths = "${pkgs.vimPlugins.friendly-snippets}";
-        }
-      ];
-    };
-
-    lsp.capabilities = # Lua
-      ''
-        capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
-      '';
 
     blink-cmp = {
       enable = true;
@@ -54,6 +31,10 @@
           ];
           "<CR>" = [
             "accept"
+            "fallback"
+          ];
+          "<C-e>" = [
+            "hide"
             "fallback"
           ];
 
@@ -169,6 +150,8 @@
         };
         completion = {
           ghost_text.enabled = false;
+          # Nothing selected until <Tab>, so <CR> at end of line inserts a newline.
+          list.selection.preselect = false;
           menu = {
             border = "rounded";
             #winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None";

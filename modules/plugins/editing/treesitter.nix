@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   plugins = {
     treesitter = {
@@ -25,14 +25,25 @@
 
         sql
         javascript
+        typescript
+        tsx
         html
+        css
+        json
         dockerfile
+        hcl
+        terraform
 
         latex
         markdown
         markdown-inline
         regex
         vimdoc
+        vim
+        query
+
+        diff
+        gitcommit
 
         nix
         xml
@@ -45,18 +56,32 @@
       enable = true;
     };
 
+    # Upstream no longer reads keymaps from setup(); they are mapped below.
     treesitter-textobjects = {
       enable = true;
-      settings.select = {
-        enable = true;
-        lookahead = true;
-        keymaps = {
-          "af" = "@function.outer";
-          "if" = "@function.inner";
-          "ac" = "@class.outer";
-          "ic" = "@class.inner";
-        };
-      };
+      settings.select.lookahead = true;
     };
   };
+
+  keymaps =
+    lib.mapAttrsToList
+      (key: query: {
+        mode = [
+          "x"
+          "o"
+        ];
+        inherit key;
+        action.__raw = ''
+          function()
+            require("nvim-treesitter-textobjects.select").select_textobject("${query}", "textobjects")
+          end
+        '';
+        options.desc = "Select ${query}";
+      })
+      {
+        "af" = "@function.outer";
+        "if" = "@function.inner";
+        "ac" = "@class.outer";
+        "ic" = "@class.inner";
+      };
 }

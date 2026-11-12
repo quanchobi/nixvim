@@ -96,33 +96,32 @@ To your `flake.nix`, add this repo as an input:
 <details>
 <summary>Plugin List</summary>
 
-| Plugin                                                                                 | Description                                                            |
-| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [nvim-autopairs](https://github.com/windwp/nvim-autopairs)                             | Inserts or deletes brackets, parens, quotes in pair.                   |
-| [comment.nvim](https://github.com/numToStr/Comment.nvim)                               | Smart commenting.                                                      |
-| [guess-indent.nvim](https://github.com/nmac427/guess-indent.nvim)                      | Automatic indentation style detection.                                 |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)        | Adds indentation guides to all lines.                                  |
-| [otter.nvim](https://github.com/jmbuhr/otter.nvim)                                     | Provides LSP features for languages embedded in other documents.       |
-| [nvim-treesitter-rainbow](https://gitlab.com/HiPhish/nvim-treesitter-rainbow)          | Rainbow delimiters for nested brackets.                                |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                  | Provides fast and accurate syntax highlighting.                        |
-| [undotree](https://github.com/mbbill/undotree)                                         | Visualizes undo history.                                               |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                            | Git integration for neovim.                                            |
-| [conform.nvim](https://github.com/stevearc/conform.nvim)                               | A plugin for formatting code.                                          |
-| [nvim-lint](https://github.com/mfussenegger/nvim-lint)                                 | A linter plugin.                                                       |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                             | Language Server Protocol integration.                                  |
-| [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)                                | An enhancement for the built-in LSP.                                   |
-| [base16.nvim](https://github.com/RRethy/base16.nvim)                                   | Base16 colorschemes.                                                   |
-| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                           | A statusline for neovim.                                               |
-| [mini.icons](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-icons.md) | A small set of icons for neovim.                                       |
-| [noice.nvim](https://github.com/folke/noice.nvim)                                      | A plugin that replaces the UI for messages, cmdline and the popupmenu. |
-| [nvim-notify](https://github.com/rcarriga/nvim-notify)                                 | A notification manager for neovim.                                     |
-| [startup.nvim](https://github.com/startup-nvim/startup.nvim)                           | A startup screen for neovim.                                           |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                     | A fuzzy finder for neovim.                                             |
-| [which-key.nvim](https://github.com/folke/which-key.nvim)                              | A plugin that shows pending keybindings.                               |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                        | Auto-completion plugin.                                                |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                   | Debug Adapter Protocol implementation for debugging.                   |
-| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                 | UI for nvim-dap.                                                       |
-| [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim)                              | For working with obsidian vaults.                                      |
+| Plugin                                                                                        | Description                                                            |
+| --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [nvim-autopairs](https://github.com/windwp/nvim-autopairs)                                    | Inserts or deletes brackets, parens, quotes in pair.                   |
+| [guess-indent.nvim](https://github.com/nmac427/guess-indent.nvim)                             | Automatic indentation style detection (respects `.editorconfig`).      |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)               | Adds indentation guides to all lines.                                  |
+| [otter.nvim](https://github.com/jmbuhr/otter.nvim)                                            | Provides LSP features for languages embedded in other documents.       |
+| [rainbow-delimiters.nvim](https://gitlab.com/HiPhish/rainbow-delimiters.nvim)                 | Rainbow delimiters for nested brackets.                                |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                         | Provides fast and accurate syntax highlighting.                        |
+| [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)         | Shows the enclosing scope at the top of the window.                    |
+| [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) | Function/class text objects.                                           |
+| [undotree](https://github.com/mbbill/undotree)                                                | Visualizes undo history.                                               |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                   | Git signs, hunk staging and blame.                                     |
+| [neogit](https://github.com/NeogitOrg/neogit)                                                 | Magit-style git interface.                                             |
+| [conform.nvim](https://github.com/stevearc/conform.nvim)                                      | Formatting on save; formatters are installed automatically.            |
+| [nvim-lint](https://github.com/mfussenegger/nvim-lint)                                        | Linters not covered by an LSP (statix, hadolint).                      |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                    | Language Server Protocol integration.                                  |
+| [blink.cmp](https://github.com/Saghen/blink.cmp)                                              | Auto-completion, signature help and snippets (friendly-snippets).      |
+| [base16.nvim](https://github.com/RRethy/base16.nvim)                                          | Base16 colorschemes.                                                   |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                                  | A statusline for neovim.                                               |
+| [mini.icons](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-icons.md)        | Icons; also stands in for nvim-web-devicons.                           |
+| [noice.nvim](https://github.com/folke/noice.nvim)                                             | A plugin that replaces the UI for messages, cmdline and the popupmenu. |
+| [nvim-notify](https://github.com/rcarriga/nvim-notify)                                        | A notification manager for neovim.                                     |
+| [startup.nvim](https://github.com/startup-nvim/startup.nvim)                                  | A startup screen for neovim.                                           |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                            | A fuzzy finder for neovim (with file-browser and ui-select).           |
+| [which-key.nvim](https://github.com/folke/which-key.nvim)                                     | A plugin that shows pending keybindings.                               |
+| [markview.nvim](https://github.com/OXY2DEV/markview.nvim)                                     | Renders markdown in the buffer.                                        |
 
 </details>
 
@@ -141,26 +140,23 @@ To your `flake.nix`, add this repo as an input:
 | `<leader>p` | Pastes from system clipboard                          |
 | `<leader>s` | Replace selected word                                 |
 
-### Debugging
+### Text Objects
 
-The Debug Adapter Protocol (DAP) is configured to automatically open and close its UI when a debug session is started, terminated, or exited.
+| Keybinding  | Description              |
+| ----------- | ------------------------ |
+| `af` / `if` | Around / inside function |
+| `ac` / `ic` | Around / inside class    |
 
-| Keybinding | Description       |
-| ---------- | ----------------- |
-| `<F5>`     | Start debugging   |
-| `<F6>`     | Stop debugging    |
-| `<F7>`     | Toggle breakpoint |
-| `<F8>`     | Continue          |
-| `<F9>`     | Step over         |
-| `<F10>`    | Step into         |
-| `<F11>`    | Step out          |
+### Completion
 
-### Ollama
-
-| Keybinding   | Description          |
-| ------------ | -------------------- |
-| `<leader>oo` | Ollama prompt        |
-| `<leader>oG` | Ollama Generate Code |
+| Keybinding          | Description                           |
+| ------------------- | ------------------------------------- |
+| `<Tab>` / `<S-Tab>` | Next / previous item or snippet field |
+| `<CR>`              | Accept selected item                  |
+| `<C-e>`             | Hide menu                             |
+| `<C-space>`         | Show menu / toggle documentation      |
+| `<C-s>`             | Toggle signature help                 |
+| `<C-u>` / `<C-d>`   | Scroll documentation                  |
 
 ### UndoTree
 
@@ -176,46 +172,58 @@ The Debug Adapter Protocol (DAP) is configured to automatically open and close i
 
 ### LSP (Language Server Protocol)
 
+Neovim's built-in defaults (`grn`, `gra`, `grr`, `gri`, `gO`, `[d`, `]d`, `<C-w>d`) also apply.
+
 | Keybinding   | Description         |
 | ------------ | ------------------- |
 | `gd`         | Goto Definition     |
-| `gr`         | Goto References     |
-| `gI`         | Goto Implementation |
-| `gT`         | Type Definition     |
+| `gD`         | Goto References     |
+| `gm`         | Goto Implementation |
+| `gy`         | Type Definition     |
 | `K`          | Hover               |
-| `<leader>cw` | Outline             |
 | `<leader>cr` | Rename              |
 | `<leader>ca` | Code Action         |
 | `<leader>cd` | Line Diagnostics    |
-| `[d`         | Next Diagnostic     |
-| `]d`         | Previous Diagnostic |
+
+### Git
+
+| Keybinding   | Description          |
+| ------------ | -------------------- |
+| `<leader>gg` | Open Neogit          |
+| `]h` / `[h`  | Next / previous hunk |
+| `<leader>hs` | Stage/unstage hunk   |
+| `<leader>hr` | Reset hunk           |
+| `<leader>hp` | Preview hunk         |
+| `<leader>hb` | Blame line           |
 
 ### Telescope
 
-| Keybinding                         | Description                                |
-| ---------------------------------- | ------------------------------------------ |
-| `<leader>f'`                       | View marks                                 |
-| `<leader>f/`                       | Fuzzy find in current buffer               |
-| `<leader>f<CR>`                    | Resume action                              |
-| `<leader>fa`                       | View autocommands                          |
-| `<leader>fC`                       | View commands                              |
-| `<leader>fb`                       | View buffers                               |
-| `<leader>fc`                       | Grep string                                |
-| `<leader>fd`                       | View diagnostics                           |
-| `<leader>ff` or `<leader><leader>` | Find files                                 |
-| `<leader>fh`                       | View help tags                             |
-| `<leader>fm`                       | View man pages                             |
-| `<leader>fo`                       | View old files                             |
-| `<leader>fr`                       | View registers                             |
-| `<leader>fs`                       | Search symbols                             |
-| `<leader>fq`                       | Search quickfix                            |
-| `<leader>gB`                       | View git branches                          |
-| `<leader>gC`                       | View git commits                           |
-| `<leader>gs`                       | View git status                            |
-| `<leader>gS`                       | View git stashes                           |
-| `<leader>fF`                       | Find all files (including hidden)          |
-| `<leader>fW`                       | Find words in all files (including hidden) |
-| `<leader>f?`                       | Find words in all open buffers             |
+| Keybinding         | Description                                |
+| ------------------ | ------------------------------------------ |
+| `<leader>f'`       | View marks                                 |
+| `<leader>f/`       | Fuzzy find in current buffer               |
+| `<leader>f<CR>`    | Resume action                              |
+| `<leader>fa`       | View autocommands                          |
+| `<leader>fC`       | View commands                              |
+| `<leader>fb`       | View buffers                               |
+| `<leader>fc`       | Grep string                                |
+| `<leader>fd`       | View diagnostics                           |
+| `<leader>fg`       | Live grep                                  |
+| `<leader><leader>` | Find files                                 |
+| `<leader>ff`       | File browser                               |
+| `<leader>fh`       | View help tags                             |
+| `<leader>fm`       | View man pages                             |
+| `<leader>fo`       | View old files                             |
+| `<leader>fr`       | View registers                             |
+| `<leader>fs`       | Search symbols                             |
+| `<leader>fq`       | Search quickfix                            |
+| `<leader>gB`       | View git branches                          |
+| `<leader>gC`       | View git commits                           |
+| `<leader>gs`       | View git status                            |
+| `<leader>gS`       | View git stashes                           |
+| `<leader>fF`       | Find all files (including hidden)          |
+| `<leader>fW`       | Find words in all files (including hidden) |
+| `<leader>f?`       | Find words in all open buffers             |
 
 ## Credits
 

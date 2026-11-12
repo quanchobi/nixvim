@@ -29,10 +29,7 @@ in
         globalstatus = true;
         disabled_filetypes = {
           statusline = [
-            "dashboard"
-            "alpha"
-            "starter"
-            "snacks_dashboard"
+            "startup"
           ];
         };
       };

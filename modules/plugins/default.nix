@@ -1,6 +1,6 @@
 {
   imports = [
-    ./obsidian.nix
+    ./markdown.nix
 
     ./cmp
     ./editing

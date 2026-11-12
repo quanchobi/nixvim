@@ -7,7 +7,6 @@
     ripgrep
     fd
   ];
-  plugins.web-devicons.enable = true;
   plugins.telescope = {
     enable = true;
     extensions = {
@@ -18,7 +17,8 @@
       fzy-native = {
         enable = true;
       };
-      undo = {
+      # Routes vim.ui.select (code actions, etc.) through telescope.
+      ui-select = {
         enable = true;
       };
     };
@@ -88,6 +88,22 @@
         action = "quickfix";
         options.desc = "Search quickfix";
       };
+      "<leader>gB" = {
+        action = "git_branches";
+        options.desc = "View git branches";
+      };
+      "<leader>gC" = {
+        action = "git_commits";
+        options.desc = "View git commits";
+      };
+      "<leader>gs" = {
+        action = "git_status";
+        options.desc = "View git status";
+      };
+      "<leader>gS" = {
+        action = "git_stash";
+        options.desc = "View git stashes";
+      };
     };
   };
   keymaps = [
@@ -124,6 +140,19 @@
       '';
       options = {
         desc = "Find words in all open buffers";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>fW";
+      action.__raw = ''
+        function()
+          require("telescope.builtin").live_grep({ additional_args = { "--hidden", "--no-ignore" } })
+        end
+      '';
+      options = {
+        desc = "Find words in all files (including hidden)";
         silent = true;
       };
     }
